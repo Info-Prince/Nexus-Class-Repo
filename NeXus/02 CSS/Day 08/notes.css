@@ -1,0 +1,10 @@
+/* Image can be stored as base 64 character. */
+/*todo Copy any base 64 image from zomato or other sites. and use online converter to check it.  */
+/* use converter to convert your png image to base 64 and use this base 64 code into html to render image on web page */
+
+
+
+image {
+    pointer-events: none;
+}
+/* It protect our image from users, they can't save our image now. */

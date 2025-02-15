@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #232323;
+            color: white;
+        }
+        #container {
+            height: 100vh;
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        #heading {
+            & #head1 {
+                font-size: 1.5rem;
+            }
+            & #head2 {
+                font-size: 4rem;
+            }
+        }
+        #content {
+            font-size: 4rem;
+            width: 20rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="heading">
+            <p id="head1">How many days until</p>
+            <h1 id="head2">Summer Olympics 2028</h1>
+        </div>
+        <div id="content"></div>
+    </div>
+</body>
+<script src="../olympics timer/script.js"></script>
+</html>

@@ -1,0 +1,43 @@
+<!--? Media tag -->
+<!-- img , audio, video, iframe etc... -->
+
+
+<!--? How audio file being attached ? -->
+
+<!-- first method -->
+<audio src="./check.mp3"></audio>
+<!-- second method -->
+<audio>
+    <source src="./check.mp3">
+    <source src="./Jaadugar.mp3">
+    <!-- here we can add multiple audio file for alternative option. -->
+</audio>
+
+<!--! Since here we've declared audio file however it'll not work until we give control attribute. Working audio file declared as below: -->
+<!-- <audio src="./check.mp3" controls></audio> -->
+<!-- <audio controls>
+    <source src="./Jaadugar.mp3">
+</audio> -->
+
+
+<!--? How video file being attached ? -->
+
+<!-- Video file be attached same as audio file. -->
+<!-- Here also we must declare controls attribute to make video file working -->
+ <video src="./check.mp3"></video>
+ <video controls width="500" height="700" autoplay muted> <!-- (autoplay) attribute is used to make video autoplay while loading website, But video won't autoplay until or unless give attribute as (muted).-->
+    <source src="./hawa.MP4" type="video/MP4"> <!-- mentioning type since we want to make browser understood that it's video type of file , and browser may render it faster. -->
+ </video> <br> <br>
+
+
+<!--? What's (iframe) tag , define it's uses ? -->
+
+<!-- The <iframe> tag is used to embed another HTML document, webpage, or content (like a video, map, or form) within the current webpage. -->
+
+<!--todo format to play other source video  -->
+<!-- <iframe src="https://www.youtube.com/embed/video_id" frameborder="0"></iframe> -->
+<iframe src="https://www.youtube.com/embed/Z_S-xQ3h1Gw" frameborder="0" allowfullscreen></iframe>
+<!-- allowfullscreen allow us to make video cover your full screen. -->
+
+<!--! Some websites doesn't allow embedding, since they want to make user land on their website to use the content. -->
+

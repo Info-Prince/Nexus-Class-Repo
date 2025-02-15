@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="head">
+        <button id="filters">Filters</button>
+        <button id="offers">Offers</button>
+        <button id="rating">Rating 4.5+</button>
+        <button id="alcohol">Alcohol</button>
+        <button id="open">Open Now</button>
+    </div>
+
+    
+    <!-- Filter pop up -->
+    <div id="filterPopup" class="popup">
+        <h3>Filter By:</h3>
+        
+        <div class="filter-option">
+            <input type="radio" id="ratingBtn" name="filter" value="ratingBtn">
+            <label for="ratingBtn">Sort by Rating</label>
+        </div>
+        <div class="filter-option">
+            <input type="radio" id="highToLow" name="filter" value="highToLow">
+            <label for="highToLow">High to Low (Price)</label>
+        </div>
+        <div class="filter-option">
+            <input type="radio" id="lowToHigh" name="filter" value="lowToHigh">
+            <label for="lowToHigh">Low to High (Price)</label>
+        </div>
+        <div class="filter-option">
+            <input type="radio" id="distance" name="filter" value="distance">
+            <label for="distance">Distance</label>
+        </div>
+
+        <button id="applyFilter" class="apply-btn">Apply</button>
+        <button id="closePopup" class="close-btn">Close</button>
+    </div>
+
+    <!-- Insert all the cards here -->
+    <div id="root" class="container grid grid-three--cols">
+        <!-- <div id="card" class="flex" >
+
+            <img src="./images/fifth.avif" alt="" id="card-image">
+            
+            <div class="card-content">
+
+                <div class="name-rating flex">
+                    <p id="rest-name">The Pacifique - Café & Lounge</p>
+                    <div class="rating flex">
+                        <p class="rateByNum">4.5</p>
+                        <p class="rating-icon">*</p>
+                    </div>
+                </div>
+
+                <div class="foodType-rate flex">
+                    <p id="foodName">Chinese, North Indian, Con</p>
+                    <p id="rate">1000 for 2</p>
+                </div>
+
+                <div class="location-distance flex">
+                    <p id="locationName">Kankarbagh, Patna</p>
+                    <p id="distance">2.2km</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- meta data -> data of data -->
+
+<meta charset="UTF-8" />
+
+<!--? In html we're using UTF-8 conversion why ? 
+
+Since server will return response in binary form , if we'll use ASCII conversion then it'll take 1 byte of memory , which can uniquely identify only 256 no. of chars ( but in actual it was uniquely identifying only 128 chars )..... However UTF-8 can allocate memory upto (1,2,3,4) byte.
+
+-> eng chars (ASCII) - will be represented by 1 byte.
+-> latin lan chars - will be represented by 2 byte.
+-> hindi / chinise lan chars - will be represented by 3 byte.
+-> emojis -> will be represented by 4 byte. -->
+
+
+<!--? How to determine that which is coming in response from the server . Like is it eng, hin, latin, emojis ? -->
+<!--? For eg data will come as : - 32 bit, 16 bit , 32 dib... So here how we can determine that which type of data is it ? -->
+
+<!-- Ans will be find out in the same file of image. -->
+
+
+
+
+<!--? How image will store in system ? -->
+
+<!-- Pixel has been defined in the form of rows and column, And these rows and column will form numerous of boxes ( each box = 1 pixel ). Each box called pixel.... And all these box will store different different color combination so that image can be formed.... 
+
+Since each box will store diff diff color combination of ( RGB ) with it's required portion ( each color range from 0 - 255). So this way, a box (1px) will take max size of 24 bit (3 byte) of memory for storing a color. ( each color red, green, blue will take 8 bit of memory ).
+
+For eg:- we have 100 row and 100 col , so it can form 100*100 = 10000 boxes (pixel). And each pixel will take 3 byte of memory , So image will be stored in 10000*3 size of memory. which will be almost 30kb. -->
+
+
+<!--? why some img have low quality and some have very high quality ? -->
+
+<!-- Ex:- If we give 8 bit to represent each color (red, green, blue) and this way we can represent pow(2,24) diff diff color.
+And on the other hand we're giving 10 bit to represent each color and this way we can represent pow(2,30) diff diff color.
+And on the very diff situation we're giving 16 bit to represent each color and this way we can represent pow(2,48) diff diff color.
+
+On 1st eg image quality will be low, but on the 2nd image it's quality will be improved but on the very last eg image clarity will be highest.... -->
+
+<!--todo  pixel full form is picture element. -->

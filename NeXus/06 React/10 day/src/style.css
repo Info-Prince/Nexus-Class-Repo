@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+#root {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    background-color: rgb(38, 239, 229);
+    border-radius: 1rem;
+
+    & .counter {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & .flex {
+            gap: 5px;
+            margin-top: 0.7rem;
+            & button {
+                padding: 0.4rem 0.7rem;
+                border-radius: 6px;
+                border: 2px solid black;
+                cursor: pointer;
+                background-color: #81a5f9;
+                color: white;
+            }
+            
+        }
+    }
+
+    & .fibonacci {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding-top: 1rem;
+        border-top: 2px solid black;
+
+        & input {
+            padding: 0.3rem 0.7rem;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+
+.secondCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.secondCtnWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #81a5f9;
+    padding: 4rem;
+    border-radius: 1rem;
+}
+
+.stopwatch {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 3rem;
+    background-color: #25f1a6;
+    border-radius: 1rem;
+
+    & .flex {
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+
+        & button {
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            border-radius: 2px solid black;
+            background-color: #81a5f9;
+            cursor: pointer;
+        }
+    }
+}

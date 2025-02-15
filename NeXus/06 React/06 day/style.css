@@ -1,0 +1,43 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#root{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countClass{
+    border-radius: 1rem;
+    background-color: white;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+button{
+    /* height: 3rem; */
+    padding: 1rem;
+    font-size: 20px;
+    background-color: rgb(32, 97, 219);
+    border-radius: 0.4rem;
+    border: 3px solid rgb(17, 158, 102);
+    cursor: pointer;
+    color: white;
+}

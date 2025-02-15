@@ -1,0 +1,36 @@
+/* Earlier font tag were used in html to style html element */
+/* After evolution of some time CSS evolved. */
+/*? Types of CSS */
+
+/* ? Different types of selector */
+/* element selector */
+/* class selector */
+/* id selector */
+/*todo p[draggable] , div[contenteditable="true"] Attribute selector selector */
+    /* Basically draggable attribute is used when we want to make some content to be dragged anywhere, and contenteditable is used when we want user to edit that particular content on the website without using inspect element. */
+    /* draggable and contenteditable is attribute of html and these attributes can be used as to select target element. */
+    p[draggable="true"] { /* it'll apply only on those element whose paragraph attribute has been set to draggable == true. */
+        color: blue;
+    }
+
+/* Universal selector */
+/* grouping selector */
+/* decendent selector */
+    /*todo concept of parent element and decendent element */
+    div p { /* it will change color of all para who is under div tag */
+        color: beige;
+    }
+
+/* child selector */
+section > p {
+    color: aquamarine;
+}
+
+/*! Note :- Child will be at one level only however decendent means all element which comes under the parent element.  */
+
+/* id selector with class selector */
+#myElement.myClass {
+    color: blue;
+    font-size: 16px;
+  }  
+/* todo the styles will apply only to an element that has both the ID myElement and the class myClass. */

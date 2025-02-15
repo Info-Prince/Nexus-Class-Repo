@@ -1,0 +1,27 @@
+/*? child property */
+/* it means kaun kiska child ban sakta hai. */
+/* div , section , article, ul, ol , etc... tags ke andar ke element child ban sakte hai. */
+/*todo div, section, article ul, ol, .... , p, h, ... */
+/* All these tags are block element , however p, h tags says that it can't make child of block level element, it'll always allow inline element as a child. But on the other hand section, article and rest allow block element to be the child of block element. */
+/* Ul or OL me bs li tags hi child bn sake hai, however they are block element, and other block element can't be child of UL or OL element. */
+/* li tag can also accepts block level element as it's child. */
+
+/* ? CSS color */
+/* rgb */
+/* each color take 8 byte since range is from 0 - 255 , and for storing 256 number we need 4 byte. */
+/* rgba */
+
+
+/* hex */
+/* # + any 6 chars from 0 to F, the range for each color is from 00 to FF  */
+/* if we want to add alpha then we can but that will take 4 byte extra for alpha and now it'll be of 8 size */
+
+
+/* hsl */
+/* hue (range from 0 - 360) , saturation (upto 100%) , lightness (upto 100%) */
+p {
+    color: hsl(0, 68%, 28%);
+}
+/* here also we can add alpha, opacity. */
+
+/* background color */

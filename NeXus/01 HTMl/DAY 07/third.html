@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>User Registration</h2>
+
+    <form>
+        <label for="uname">Username: </label>
+        <input type="text" id="uname" name="uname" required> <br> <br>
+
+        <label for="uemail">Email: </label>
+        <input type="email" id="uemail" name="uemail" required> <br><br>
+
+        <label for="pass">Password: </label>
+        <input type="password" id="pass" name="pass" required> <br><br>
+
+        <label for="male">Gender: </label>
+
+        <input type="radio" name="gender" id="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female">
+        <label for="female">Female</label>
+
+        <input type="radio" name="gender" id="other">
+        <label for="other">Female</label> <br> <br>
+
+
+        <!-- using same name of each gender we can able to select only one gender out of all -->
+         <!-- since backend me ek hi option submit hona hai, to same name dekar hm sare gender ko group me wrap up kr diye hai, to ush group me se kisi ek data ko hi server pr submit karenge. -->
+          <!-- same name of diff diff elem tell that they are from same group and only one out of all elem will be submitted to server. -->
+
+        <input type="checkbox" id="conditions required">
+        <label for="conditions">I agree to the terms and conditions</label> <br> <br>
+
+        <button>Register</button>
+        
+    </form>
+</body>
+</html>

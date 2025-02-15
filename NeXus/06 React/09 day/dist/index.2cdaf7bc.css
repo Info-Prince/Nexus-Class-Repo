@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.navbar-heading {
+  background-color: #17ea8b;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 1.5rem 2rem;
+}
+
+.card {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.3rem;
+  padding: 0 4rem;
+
+  & .cards {
+    background-color: #bcd4ea;
+    border-radius: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    & img {
+      border-radius: inherit;
+      aspect-ratio: 1;
+      width: 12rem;
+      margin-bottom: 1rem;
+    }
+
+    & h2 {
+      text-transform: uppercase;
+      font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    }
+  }
+}
+
+.searchbox {
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2rem;
+
+  & input {
+    border-radius: 4px;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+  }
+
+  & button {
+    cursor: pointer;
+    background-color: #17ea8b;
+    border: 3px solid #000;
+    border-radius: 9px;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+  }
+}
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

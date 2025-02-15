@@ -1,0 +1,51 @@
+<!--? Explain about the relation between key and value -->
+
+<label for="username"></label>
+<input type="text" id="username" name="fname" value="prince">
+
+<!-- Here key will be name (fname) and value will be the data which user will enter in the input field.  -->
+<!-- We can set default value of input field, However you can. it will just fill up your input field automatically to submit your form data, and this will be ale to make modification. -->
+
+
+<!--? What's the importance of value attributes in input tag -->
+<label>Gender:</label>
+
+<input type="radio" id="male" name="gender" value="Male">
+<label for="male">Male:</label>
+<input type="radio" id="female" name="gender" value="Female">
+<label for="female">Female:</label>
+<input type="radio" id="other" name="gender" value="Other">
+<label for="other">Other:</label>
+
+<!-- Here if you don't define value attribute then data will be sent to backend as (gender = onn), Which can't be define. So define value of radio btn as the type of data. like : (for male radio btn define value as male => it'll be stored as :- gender = male) -->
+
+<label for="dep">Department</label>
+
+<select name="Department" id="dep">
+    <option value="" disabled selected>Select Your Department</option>
+    <option value="Engineer">Engineer</option>
+    <option value="Finance">Finance</option>
+    <option value="IT">IT</option>
+    <option value="Rest">Rest</option>
+</select>
+
+<!-- Here key is name of select tag (Department), now we must have to declare value of each option since in backend side we've to send value as well or on the frontend side we'll only selecting option from the dropdown but have to send value as well -->
+
+<!-- todo In form , the place in input field where we can't type data as value , we must declare value of that input since we've to send data in backend side. -->
+
+
+<!--? fixing range of input data -->
+<!-- DOB -->
+<label for="date">DOB: </label>
+<input type="date" id="date" name="DOB" min="2001-01-01" max="2005-12-31"><!-- Year of Passing -->
+<!--2023 2024 2025  -->
+<label for="year">Year of Passing: </label>
+<input type="number" id="year" name="Year" min="2023" max="2025">
+
+<!--? What's action attributes in form tag ? -->
+<form action="url_server"></form>
+
+<!-- Server url where this form has to be submitted. -->
+<!-- It defines the endpoint (server or script) that will handle the submitted form data. -->
+<!-- Default Behavior: If the action attribute is left blank or omitted, the form data will be submitted to the same page the form is on. -->
+<!-- Can Include Parameters: The URL can include query parameters for the form data or point to an external API. -->

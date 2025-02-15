@@ -1,0 +1,28 @@
+<!--! emmet -->
+<!-- emmet learn by implementing. -->
+ 
+<!--! form tag in html -->
+
+<!--? why giving same name of for and id attribute of label & input tag respectively ? -->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username">
+
+<!-- Basically if we give same name label tag for attribute and input tag id attribute then it will act as linking the label to the input field. -->
+<!-- When you click the label, the associated input field automatically gets focused or activated. -->
+
+<!--todo Using the same name for the for attribute in a <label> and the id in an input field helps by making it easier for screen readers to identify the input, and improves the user experience by allowing users to click on the label to interact with the form field.  -->
+
+
+<!--? What's the reason of giving name of input tag ?  -->
+<input type="text" id="username" name="username">
+
+<!-- Form Data Submission: When a form is submitted, the name attribute is used to identify the input's data in the server-side processing. The value entered in the input field is paired with its name in the form submission, Without it, the data won't be sent during submission. -->
+<!-- When the form is submitted, the server will receive the data as: username=value --> 
+
+<!-- Server-Side Handling: Acts as the key for retrieving and processing data on the server. -->
+<!-- Grouping Elements: It groups form elements like radio buttons and checkboxes to allow selection from a set. -->
+
+<!--? What's required attributes in input tag ? -->
+<input type="text" name="email" required>
+
+<!-- It ensures that input field must be filled out before submission. -->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #grandParent, #parent , #child {
+            border: 2px solid black;
+        }
+        #grandParent {
+            width: 30rem;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #parent {
+            width: 20rem;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #child {
+            width: 10rem;
+            aspect-ratio: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="grandParent">
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

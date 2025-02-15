@@ -1,0 +1,131 @@
+@keyframes fadeInleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-8%);
+        visibility: visible;
+      }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+
+    }
+    
+}
+@keyframes fadeInright {
+    0% {
+        opacity: 0;
+        transform: translateX(8%);
+        visibility: visible;
+      }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    }
+    
+}
+
+@keyframes fadeInPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        visibility: visible;
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.3);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(0.8);
+        transform: rotate(-10deg);
+    }
+    85% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: translateY(1rem);
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(-6deg);
+        transform: translateX(1rem);
+    }
+    75% {
+        transform: translateY(0);
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(6deg);
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes moveFirst {
+    0% {
+        transform: translate(0, 0);
+        /* translate: (0 , 0); */
+        visibility: visible;
+    }
+    50% {
+        transform: translate(-40rem , 40rem);
+    }
+    100% {
+        transform: translate(0,0);
+        /* translate: (-40rem 40rem); */
+        visibility: visible;
+    }
+}
+
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }     
+}
+
+@keyframes changebgcolor {
+    0% {
+        background: var(--low-contrast-text);
+    }
+    40% {
+        background: (circle, rgba(152,152,152,1) 0%, rgba(141,112,201,1) 75%);
+    }
+    75% {
+        background-color: #d6c8f3;
+    }
+    100% {
+        background: #8d70c9;
+    }
+}
+
+@keyframes updown {
+
+    0% {
+        opacity: 0.6;
+        transform: translateY(4%);
+        /* transform: scale(0.6); */
+    }
+    
+    100% {
+        opacity: 1;
+        /* transform: rotate3d(360deg); */
+        transform: translateY(0%);
+    }
+    
+}
