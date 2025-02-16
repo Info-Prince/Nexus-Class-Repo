@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #search-bar {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        .search-btn {
+            padding: 8px 12px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #e55347;
+        }
+
+        .header .profile {
+            position: relative;
+        }
+
+        .header .profile .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .header .profile:hover .dropdown {
+            display: block;
+        }
+
+        .header .profile .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #343a40;
+            transition: background-color 0.3s ease;
+        }
+
+        .header .profile .dropdown a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #343a40;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar.collapsed {
+            width: 60px;
+        }
+
+        .sidebar .toggle-btn {
+            align-self: flex-end;
+            background-color: #495057;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar.collapsed .toggle-btn {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .sidebar ul li {
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #495057;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+
+        .sidebar ul li i {
+            font-size: 18px;
+        }
+
+        .sidebar.collapsed ul li a {
+            display: none;
+        }
+
+        .sidebar.collapsed ul li i {
+            margin-left: 0;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+
+
+        /* new code */
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .content .main-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content .main-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .content .card {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 20px);
+            max-width: calc(33% - 20px);
+            box-sizing: border-box;
+        }
+
+        .content .card h3 {
+            margin: 0 0 10px;
+            color: #343a40;
+        }
+
+        .content .card p {
+            margin: 0;
+            color: #6c757d;
+        }
+
+        @media (max-width: 768px) {
+            .content .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* popup style  */
+        .filter-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            z-index: 1000;
+            /* display: none; */
+        }
+
+        .filter-popup.active {
+            display: block;
+        }
+
+        .filter-popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .filter-popup ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-popup ul li {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-popup ul li:hover {
+            background-color: #0056b3;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            /* display: none; */
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Blog Creators</div>
+        <div class="search-container">
+            <input type="text" placeholder="Search blogs..." id="search-bar">
+            <button type="button" class="search-btn">Search</button>
+        </div>
+
+        <div class="profile">
+            <a href="#profile">Profile</a>
+            <div class="dropdown">
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">☰</button>
+        <ul>
+            <li><i class="icon">🏠</i><a href="#home">Home</a></li>
+            <li><i class="icon">✍️</i><a href="#create-blog">Create Blog</a></li>
+            <li><i class="icon">📋</i><a href="#manage-blogs">Manage Blogs</a></li>
+            <li><i class="icon">📝</i><a href="#notes">Notes</a></li>
+            <li><i class="icon">🔖</i><a href="#tags">Tags</a></li>
+        </ul>
+    </div>
+    
+    <!-- <div class="content">
+        <h1>Welcome to the Blog Website</h1>
+        <p>This is the main content area. The sidebar is collapsible for better user experience.</p>
+    </div> -->
+
+    <!-- new code -->
+    <div class="content">
+        <div class="main-header">
+            <h1>Welcome to Your Blog Dashboard</h1>
+            <p>Create, manage, and organize your content with ease.</p>
+        </div>
+        <div class="main-section">
+            <div class="card">
+                <h3>Create Blog</h3>
+                <p>Start writing your new blog post here.</p>
+            </div>
+            <div class="card">
+                <h3>Manage Blogs</h3>
+                <p>Edit, delete, or view your existing blogs.</p>
+            </div>
+            <div class="card">
+                <h3>Notes</h3>
+                <p>Keep track of your ideas and drafts.</p>
+            </div>
+            <div class="card">
+                <h3>Tags</h3>
+                <p>Organize your blogs with relevant tags.</p>
+            </div>
+            <div class="card">
+                <h3>Profile</h3>
+                <p>Manage your account settings and preferences.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- show pop up section code -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="filter-popup" id="filterPopup">
+        <h2>Choose Your Interest</h2>
+        <ul>
+            <li>Traveling</li>
+            <li>Lifestyle</li>
+            <li>Technology</li>
+            <li>Health</li>
+            <li>Education</li>
+        </ul>
+    </div>
+
+    <button style="position: absolute; top: 20px; left: 20px;">Filter Blogs</button>
+
+
+</body>
+</html>

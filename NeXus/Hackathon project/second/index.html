@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #search-bar {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+
+        .search-btn {
+            padding: 8px 12px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #e55347;
+        }
+
+        .header .profile {
+            position: relative;
+        }
+
+        .header .profile .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: #fff;
+            color: #000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .header .profile:hover .dropdown {
+            display: block;
+        }
+
+        .header .profile .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #343a40;
+            transition: background-color 0.3s ease;
+        }
+
+        .header .profile .dropdown a:hover {
+            background-color: #e9ecef;
+        }
+
+    .toolbar {
+      background: #fff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .toolbar button, .toolbar select, .toolbar input[type="color"] {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background: #f9f9f9;
+      cursor: pointer;
+    }
+    .hero-section {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-section input, .hero-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .hero-section textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .full-details {
+      position: relative;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      background: #fff;
+      min-height: 200px;
+      margin-top: 15px;
+      outline: none;
+    }
+    .add-icon {
+      position: absolute;
+      cursor: pointer;
+      font-size: 20px;
+      color: #007bff;
+      user-select: none;
+      z-index: 10;
+      right: -30px; /* Positioned to the right */
+      top: 0; /* Initially aligned with the top of the first line */
+    }
+    .add-icon:hover {
+      color: #0056b3;
+    }
+    #imageDialog {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      z-index: 1000;
+    }
+    #imageDialog input[type="file"] {
+      width: 100%;
+    }
+    #imageDialog button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 3px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    #imageDialog button:hover {
+      background: #0056b3;
+    }
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    #chat-prompt {
+      display: flex
+;
+    align-items: center;
+    justify-content: center;
+    }
+
+    #promptInput {
+  width: 80%;
+  height: auto;
+  min-height: 6rem; /* Initial height */
+  max-height: 20rem; /* Limit the height for scrolling */
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  resize: none; /* Disable manual resizing */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Hide horizontal scrolling */
+  box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Hide the scrollbar */
+#promptInput::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar width */
+  height: 0; /* Hide horizontal scrollbar */
+}
+
+#promptInput {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+#promptInput:focus {
+  border-color: #4CAF50; /* Highlight the field on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* new style */
+#blog-contentSection {
+    width: 100%;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#contentInput {
+    width: 100%;
+    min-height: 45rem;
+    max-height: max-content;
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#contentInput:empty:before {
+    content: attr(placeholder);
+    color: #999;
+    pointer-events: none;
+}
+
+#contentInput::-webkit-scrollbar {
+    width: 0;
+    height: 0; 
+}
+
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Blog Creators</div>
+        <div class="search-container">
+            <input type="text" placeholder="Search blogs..." id="search-bar">
+            <button type="button" class="search-btn">Search</button>
+        </div>
+
+        <div class="profile">
+            <a href="#profile">Profile</a>
+            <div class="dropdown">
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <button><b>B</b></button>
+    <button><i>I</i></button>
+    <button><u>U</u></button>
+    <button>Undo</button>
+    <button>Redo</button>
+    <select>
+      <option value="left">Align Left</option>
+      <option value="center">Center</option>
+      <option value="right">Align Right</option>
+      <option value="justify">Justify</option>
+    </select>
+    <button>+ Font</button>
+    <select>
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Georgia">Georgia</option>
+    </select>
+    <input type="color" title="Text Color">
+    <input type="color" title="Highlight Color">
+    <select id="listType">
+      <option value="unordered">Unordered List</option>
+      <option value="ordered">Ordered List</option>
+    </select>
+  </div>
+
+  <div id="blog-contentSection">
+    <div id="contentInput" contenteditable="true" placeholder="Start Creating Your Blog"></div>
+    <input type="file" id="imageUploader" accept="image/*">
+</div>
+
+
+  <script>
+    const addIcon = document.getElementById('addIcon');
+    const imageDialog = document.getElementById('imageDialog');
+    const overlay = document.getElementById('overlay');
+    const uploadButton = document.getElementById('uploadImage');
+    const fullBlog = document.getElementById('fullBlog');
+    const imageUpload = document.getElementById('imageUpload');
+
+    // Adjust + Icon Position
+    function adjustAddIconPosition() {
+      const selection = window.getSelection();
+      if (selection.rangeCount === 0) return;
+
+      const range = selection.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const fullBlogRect = fullBlog.getBoundingClientRect();
+
+      // Adjust the position inside the fullBlog box
+      addIcon.style.top = `${rect.top - fullBlogRect.top + fullBlog.scrollTop}px`;
+      addIcon.style.left = `calc(100% - 30px)`; // Positioned at the right
+    }
+
+    // Handle Placeholder Text
+    function handlePlaceholder() {
+      if (fullBlog.innerHTML.trim() === '' || fullBlog.innerHTML.trim() === '<br>') {
+        fullBlog.innerHTML = '<p>Write the full details of your blog here...</p>';
+      }
+    }
+
+    fullBlog.addEventListener('input', adjustAddIconPosition);
+    fullBlog.addEventListener('click', adjustAddIconPosition);
+    fullBlog.addEventListener('focus', () => {
+      if (fullBlog.innerHTML.trim() === '<p>Write the full details of your blog here...</p>') {
+        fullBlog.innerHTML = '';
+      }
+    });
+    fullBlog.addEventListener('blur', handlePlaceholder);
+
+    // Show Dialog
+    addIcon.addEventListener('click', () => {
+      imageDialog.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    // Close Dialog
+    overlay.addEventListener('click', () => {
+      imageDialog.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+
+    // Upload Image
+    uploadButton.addEventListener('click', () => {
+      const file = imageUpload.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.maxWidth = '100%';
+          fullBlog.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      }
+      imageDialog.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
